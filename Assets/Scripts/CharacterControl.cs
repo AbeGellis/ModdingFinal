@@ -8,22 +8,32 @@ public class CharacterControl : MonoBehaviour {
 	public float groundSpeed;	//Acceleration on the ground
 	public float maxSpeed;		//Maximum velocity
 	
-	public float stopSpeed = .2f;
+	public float stopSpeed = .2f;	//Minimum threshold to keep moving
 	
-	bool grounded;
+	bool grounded;	//On ground or not (not implemented)
 	
-	Vector3 horizontalMove = Vector3.zero;
+	Vector3 horizontalMove = Vector3.zero;	//Current movement impetus
+	
+	
+	Vector3 lookChange = Vector3.zero;	//Change in look direction each frame
+	
+	Vector3 flatten = new Vector3(1f, 0f, 1f);	
 	
 	//Brain sends movement commands
 	public Brain brain;
 	
-	void Start() {
+	void Awake() {
 		brain.Assign(this);
 	}
 	
 	//Applies given movement to movement in next update
 	public void Move(Vector3 move) {
 		horizontalMove += move;
+	}
+	
+	//Applies given rotation to direction in next update
+	public void Look(Vector3 changeAngles) {
+		lookChange += changeAngles;
 	}
 	
 	void Update() {
@@ -39,8 +49,12 @@ public class CharacterControl : MonoBehaviour {
 			rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 	}
 	
-	void FixedUpdate () {
+	void FixedUpdate() {
+		horizontalMove.Scale(flatten);
 		Vector3 hor = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z) + horizontalMove.normalized;
+		
+		//Apply current rotation
+		transform.Rotate(0f, lookChange.y, lookChange.z);
 		
 		//Apply current movement
 		rigidbody.AddForce(horizontalMove.normalized * groundSpeed, ForceMode.VelocityChange); 
@@ -52,5 +66,6 @@ public class CharacterControl : MonoBehaviour {
 		
 		//Reset movement input
 		horizontalMove = Vector3.zero;
+		lookChange = Vector3.zero;
 	}
 }
