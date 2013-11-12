@@ -688,6 +688,7 @@ GameObject:
   - 33: {fileID: 1399792672}
   - 65: {fileID: 1399792671}
   - 23: {fileID: 1399792670}
+  - 114: {fileID: 1399792674}
   m_Layer: 0
   m_Name: endtrigger
   m_TagString: Untagged
@@ -743,6 +744,19 @@ Transform:
   m_LocalScale: {x: 3.56022048, y: 2.87338471, z: 7.2958703}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &1399792674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1399792669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 860c3f00072a1d54e9ab5ff272dd7ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1821998549}
+  mouseClicked: {fileID: 1821998555}
 --- !u!1 &1482666384
 GameObject:
   m_ObjectHideFlags: 0
