@@ -9,8 +9,9 @@ public class CharacterControl : MonoBehaviour {
 	public float maxSpeed;		//Maximum velocity
 	
 	public float stopSpeed = .2f;	//Minimum threshold to keep moving
+	public float drag = 2f; 		//Friction while grounded
 	
-	bool grounded;	//On ground or not (not implemented)
+	bool grounded;	//On ground or not
 	
 	Vector3 horizontalMove = Vector3.zero;	//Current movement impetus
 	
@@ -29,6 +30,10 @@ public class CharacterControl : MonoBehaviour {
 	//Applies given movement to movement in next update
 	public void Move(Vector3 move) {
 		horizontalMove += move;
+	}
+	
+	public void Jump(float force) {
+		rigidbody.AddForce(Vector3.up * force, ForceMode.VelocityChange);
 	}
 	
 	//Applies given rotation to direction in next update
@@ -58,6 +63,19 @@ public class CharacterControl : MonoBehaviour {
 		
 		//Apply current movement
 		rigidbody.AddForce(horizontalMove.normalized * groundSpeed, ForceMode.VelocityChange); 
+		
+		//Grounded check
+		Vector3 colliderBottom = collider.bounds.center + new Vector3(0f, collider.bounds.extents.y, 0f);
+		Ray checkGround = new Ray(colliderBottom, Vector3.down);
+		RaycastHit groundInfo = new RaycastHit();
+		grounded = collider.Raycast(checkGround, out groundInfo, 0.4f);
+		
+		//Friction while grounded
+		if (grounded)
+			rigidbody.drag = drag;
+		else
+			rigidbody.drag = 0f;
+		
 		
 		//Cap speed
 		if (hor.magnitude > maxSpeed)
