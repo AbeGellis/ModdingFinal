@@ -33,6 +33,9 @@ public class PlayerBrain : Brain {
 		if (Input.GetKey(right))
 			body.Move(body.transform.right);
 		
+		if (Input.GetKeyDown(KeyCode.Space))
+			body.Jump();
+		
 		//Rotation - rotates character based on mouse and camera too (because body can't pitch, but camera should)
 		Vector3 mouseDiff = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0f) * mouseSensitivity;
 		Look(new Vector3(-mouseDiff.y, mouseDiff.x, 0f));
@@ -41,6 +44,8 @@ public class PlayerBrain : Brain {
 		//Locks the cursor into the screen if the screen is active and the cursor is over it
 		if (new Rect(0f, 0f, Screen.width, Screen.height).Contains(Input.mousePosition)) {
 			Screen.lockCursor = true;
+			
+		
 		}
 	}
 }
