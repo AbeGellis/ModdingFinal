@@ -34,7 +34,7 @@ public class PlayerBrain : Brain {
 			body.Move(body.transform.right);
 		
 		if (Input.GetKeyDown(KeyCode.Space))
-			body.Jump(10f);
+			body.Jump();
 		
 		//Rotation - rotates character based on mouse and camera too (because body can't pitch, but camera should)
 		Vector3 mouseDiff = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0f) * mouseSensitivity;
