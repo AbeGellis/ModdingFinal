@@ -33,6 +33,7 @@ public class CharacterControl : MonoBehaviour {
 		horizontalMove += move;
 	}
 	
+	//Applies upward force
 	public void Jump() {
 		if (grounded)
 			rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
