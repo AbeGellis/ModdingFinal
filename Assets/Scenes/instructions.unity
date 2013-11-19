@@ -108,7 +108,7 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 2cf3fdc450d7aaa47aefdbddcb51f187, type: 3}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -124,7 +124,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2cf3fdc450d7aaa47aefdbddcb51f187, type: 3}
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -137,8 +137,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 56353027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -250.196259, y: -104.972939, z: 154.317383}
-  m_LocalScale: {x: 6.45264244, y: 6.45264244, z: 6.45264244}
+  m_LocalPosition: {x: -207.229706, y: -104.972939, z: 154.317383}
+  m_LocalScale: {x: 4.96853447, y: 4.96853447, z: 4.96853447}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &417871022
@@ -173,9 +173,9 @@ TextMesh:
   m_Alignment: 0
   m_TabSize: 4
   m_FontSize: 100
-  m_FontStyle: 0
+  m_FontStyle: 1
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 2cf3fdc450d7aaa47aefdbddcb51f187, type: 3}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -191,7 +191,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2cf3fdc450d7aaa47aefdbddcb51f187, type: 3}
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -271,8 +271,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 903348297}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -177.870819, y: 121.014778, z: 154.317383}
-  m_LocalScale: {x: 6.45264244, y: 6.45264244, z: 6.45264244}
+  m_LocalPosition: {x: -214.911057, y: 121.014778, z: 154.317383}
+  m_LocalScale: {x: 7.93675041, y: 7.93675041, z: 7.93675041}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1209481971
@@ -325,7 +325,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: .0196078438}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -363,9 +363,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1209481971}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 338da23f7da924c9dbc38e5827a0ab72, type: 3}
+  m_Script: {fileID: 11500000, guid: b904e112e8043cf43b49515f52d87092, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: 
   m_EditorClassIdentifier: 
 --- !u!1 &1598204015
 GameObject:
@@ -391,7 +390,7 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1598204015}
-  m_Text: Mouse to Look
+  m_Text: Mouse around to Look
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -401,7 +400,7 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 2cf3fdc450d7aaa47aefdbddcb51f187, type: 3}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -417,7 +416,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2cf3fdc450d7aaa47aefdbddcb51f187, type: 3}
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -430,8 +429,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1598204015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -189.188782, y: -182.952301, z: 154.317383}
-  m_LocalScale: {x: 6.45264244, y: 6.45264244, z: 6.45264244}
+  m_LocalPosition: {x: -243.791748, y: -182.952301, z: 154.317383}
+  m_LocalScale: {x: 4.96853447, y: 4.96853447, z: 4.96853447}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &1846885220
@@ -468,7 +467,7 @@ TextMesh:
   m_FontSize: 100
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 12800000, guid: 2cf3fdc450d7aaa47aefdbddcb51f187, type: 3}
+  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -484,7 +483,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 2cf3fdc450d7aaa47aefdbddcb51f187, type: 3}
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -497,8 +496,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1846885220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -281.488403, y: -28.8708572, z: 154.317383}
-  m_LocalScale: {x: 6.45264244, y: 6.45264244, z: 6.45264244}
+  m_LocalPosition: {x: -224.399353, y: -28.8708572, z: 154.317383}
+  m_LocalScale: {x: 4.96853447, y: 4.96853447, z: 4.96853447}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!1 &2048147431
@@ -511,7 +510,6 @@ GameObject:
   - 4: {fileID: 2048147434}
   - 23: {fileID: 2048147433}
   - 102: {fileID: 2048147432}
-  - 114: {fileID: 2048147435}
   m_Layer: 0
   m_Name: New Text
   m_TagString: Untagged
@@ -565,18 +563,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2048147431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -442.934662, y: -260.97406, z: 154.317383}
+  m_LocalPosition: {x: -404.037537, y: -260.97406, z: 154.317383}
   m_LocalScale: {x: 6.45264244, y: 6.45264244, z: 6.45264244}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &2048147435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2048147431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b904e112e8043cf43b49515f52d87092, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

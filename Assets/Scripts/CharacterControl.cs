@@ -39,6 +39,7 @@ public class CharacterControl : MonoBehaviour {
 	
 	//Applies upward force
 	public void Jump() {
+		print (grounded);
 		if (grounded)
 			rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
 	}
@@ -64,9 +65,11 @@ public class CharacterControl : MonoBehaviour {
 		
 		//Grounded check
 		Vector3 colliderBottom = collider.bounds.center - new Vector3(0f, collider.bounds.extents.y, 0f);
-		Ray checkGround = new Ray(colliderBottom, Vector3.down);
+		Ray checkGround = new Ray(transform.position, Vector3.down*2);
+		Debug.DrawRay(transform.position, Vector3.down*2, Color.black);
+		
 		RaycastHit groundInfo = new RaycastHit();
-		grounded = Physics.Raycast(checkGround, out groundInfo, 0.4f);
+		grounded = Physics.Raycast(checkGround, out groundInfo, 1.5f);
 		
 		//Friction while grounded
 		if (grounded)

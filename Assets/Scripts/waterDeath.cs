@@ -23,6 +23,6 @@ public class waterDeath : MonoBehaviour {
 	void OnTriggerEnter(Collider player)
 	{
 		//"respawn" player when they hit the water
-		player.transform.position = startPosition;
+		player.gameObject.transform.position = startPosition;
 	}
 }
