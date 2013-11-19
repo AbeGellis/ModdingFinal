@@ -1,6 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\endtrigger.cs">
+    <Files>
+      <File FileName="Assets\scripts\clicktoMove.cs" Line="7" Column="17" />
+      <File FileName="..\Unity\class\Assets\11-12-13\playerInput.cs" Line="22" Column="5" />
+      <File FileName="Assets\scripts\GUItest.cs" Line="6" Column="25" />
+      <File FileName="Assets\scripts\endtrigger.cs" Line="20" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

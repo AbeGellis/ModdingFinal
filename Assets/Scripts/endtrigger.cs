@@ -28,6 +28,6 @@ public class endtrigger : MonoBehaviour {
 		mouseClicked.mouseClicked = false;
 		
 		//load arena level
-		Application.LoadLevel ("Sandbox");
+		Application.LoadLevel ("arena1");
 	}
 }
