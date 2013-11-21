@@ -63,6 +63,6 @@ public class Brain : MonoBehaviour {
 	//Override this for update-cycle logic
 	virtual public void Update () {
 		//Lets you see where the character is looking
-		Debug.DrawRay(body.transform.position, transform.forward * 3f, Color.blue);
+		//Debug.DrawRay(body.transform.position, transform.forward * 3f, Color.blue);
 	}
 }
