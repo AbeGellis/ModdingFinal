@@ -78,10 +78,15 @@ public class CharacterControl : MonoBehaviour {
 		else
 			rigidbody.velocity += horizontalMove.normalized * airSpeed;
 		
+		//Grounded check
+		Ray checkGround = new Ray(transform.position, Vector3.down);
+		
+		grounded = (Mathf.Abs(rigidbody.velocity.y) < 2f && Physics.Raycast(checkGround, 1f) );
+		
 		//Apply jump
 		if (jump) {
-			grounded = false;
 			jump = false;
+			grounded = false;
 			rise = true;
 			//Ugly hacks
 			rigidbody.velocity = Vector3.up * jumpForce + rigidbody.velocity;
@@ -94,11 +99,6 @@ public class CharacterControl : MonoBehaviour {
 			else
 				rise = false;
 		}
-		
-		//Grounded check
-		Ray checkGround = new Ray(transform.position, Vector3.down);
-		
-		grounded = (Mathf.Abs(rigidbody.velocity.y) < .1f && Physics.Raycast(checkGround, 1f) );
 		
 		//Friction while grounded
 		if (grounded)
