@@ -98,7 +98,7 @@ public class CharacterControl : MonoBehaviour {
 		//Grounded check
 		Ray checkGround = new Ray(transform.position, Vector3.down);
 		
-		grounded = (Mathf.Abs(rigidbody.velocity.y) < .01f && Physics.Raycast(checkGround, 1f) );
+		grounded = (Mathf.Abs(rigidbody.velocity.y) < .1f && Physics.Raycast(checkGround, 1f) );
 		
 		//Friction while grounded
 		if (grounded)
