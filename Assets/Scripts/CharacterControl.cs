@@ -9,13 +9,17 @@ public class CharacterControl : MonoBehaviour {
 	public static List<CharacterControl> characters;		//Character container (tracks all characters)
 	
 	public float groundSpeed;	//Acceleration on the ground
+	public float airSpeed;		//Acceleration in the air
 	public float maxSpeed;		//Maximum velocity
 	public float jumpForce;		//Strength of jumps
+	public float jumpBoost;		//Strength of variable jumps
 	
 	public float stopSpeed = .2f;	//Minimum threshold to keep moving
 	public float drag = 2f; 		//Friction while grounded
 	
 	bool grounded;	//On ground or not
+	bool jump; //About to jump
+	bool rise; //Rising with variable jumping
 	
 	Vector3 horizontalMove = Vector3.zero;	//Current movement impetus
 	
@@ -39,9 +43,17 @@ public class CharacterControl : MonoBehaviour {
 	
 	//Applies upward force
 	public void Jump() {
-		print (grounded);
-		if (grounded)
-			rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.VelocityChange);
+		if (grounded) 
+			jump = true;
+	}
+	
+	public bool IsRising() {
+		return rise;
+	}
+	
+	//End variable jump
+	public void StopRising() {
+		rise = false;
 	}
 	
 	//Applies given rotation to direction in next update
@@ -61,15 +73,32 @@ public class CharacterControl : MonoBehaviour {
 		transform.Rotate(Vector3.up, lookChange.x);
 		
 		//Apply current movement
-		rigidbody.AddForce(horizontalMove.normalized * groundSpeed, ForceMode.VelocityChange); 
+		if (grounded)
+			rigidbody.velocity += horizontalMove.normalized * groundSpeed;
+		else
+			rigidbody.velocity += horizontalMove.normalized * airSpeed;
+		
+		//Apply jump
+		if (jump) {
+			grounded = false;
+			jump = false;
+			rise = true;
+			//Ugly hacks
+			rigidbody.velocity = Vector3.up * jumpForce + rigidbody.velocity;
+		}
+		
+		//Apply rise
+		if (rise) {
+			if (rigidbody.velocity.y > 0f)
+				rigidbody.velocity += Vector3.up * jumpBoost;
+			else
+				rise = false;
+		}
 		
 		//Grounded check
-		Vector3 colliderBottom = collider.bounds.center - new Vector3(0f, collider.bounds.extents.y, 0f);
-		Ray checkGround = new Ray(transform.position, Vector3.down*2);
-		Debug.DrawRay(transform.position, Vector3.down*2, Color.black);
+		Ray checkGround = new Ray(transform.position, Vector3.down);
 		
-		RaycastHit groundInfo = new RaycastHit();
-		grounded = Physics.Raycast(checkGround, out groundInfo, 1.5f);
+		grounded = (Mathf.Abs(rigidbody.velocity.y) < .01f && Physics.Raycast(checkGround, 1f) );
 		
 		//Friction while grounded
 		if (grounded)
@@ -85,8 +114,6 @@ public class CharacterControl : MonoBehaviour {
 		}
 		else
 			rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
-		
-		
 		
 		//Cap speed
 		if (hor.magnitude > maxSpeed)
