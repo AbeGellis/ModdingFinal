@@ -19,13 +19,13 @@ public class WalkerBrain : Brain {
 		//Vector describing difference between player/character positions
 		Vector3 toPlayer = CharacterControl.player.transform.position - body.transform.position;
 		
-	
-		
 		//Check to see if player is within view
 		Ray sightLine = new Ray(body.transform.position, toPlayer);
 		RaycastHit sightRay = new RaycastHit();
 		Physics.Raycast(sightLine, out sightRay, toPlayer.magnitude);
-		bool seesPlayer = (toPlayer.magnitude <= sightDistance && (sightRay.collider == CharacterControl.player.collider));
+		bool seesPlayer = (toPlayer.magnitude <= sightDistance && 
+			(sightRay.collider.transform == CharacterControl.player.collider.transform));
+		//Compares transforms because comparing colliders wasn't working.  Total hack.
 		
 		if (seesPlayer)
 			Look(toPlayer, turnSpeed);	//Turn to face player

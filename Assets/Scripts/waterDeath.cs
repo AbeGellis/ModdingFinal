@@ -7,12 +7,11 @@ using System.Collections;
  * */
 public class waterDeath : MonoBehaviour {
 	
-	public GameObject player;
 	Vector3 startPosition; //remember the player's starting position
 	
 	// Use this for initialization
 	void Start () {
-		startPosition = player.transform.position;
+		startPosition = CharacterControl.player.transform.position;
 	}
 	
 	// Update is called once per frame
@@ -20,9 +19,12 @@ public class waterDeath : MonoBehaviour {
 	
 	}
 	
-	void OnTriggerEnter(Collider player)
+	void OnTriggerEnter(Collider swimmer)
 	{
 		//"respawn" player when they hit the water
-		player.gameObject.transform.position = startPosition;
+		if (swimmer.gameObject == CharacterControl.player.gameObject)
+			swimmer.gameObject.transform.position = startPosition;
+		else
+			Destroy(swimmer.gameObject);
 	}
 }
