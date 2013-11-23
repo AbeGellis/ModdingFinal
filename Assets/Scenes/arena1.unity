@@ -333,7 +333,7 @@ GameObject:
   - 92: {fileID: 82766331}
   - 124: {fileID: 82766330}
   - 81: {fileID: 82766329}
-  - 114: {fileID: 82766328}
+  - 114: {fileID: 82766333}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -352,23 +352,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 819105279}
---- !u!114 &82766328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400004, guid: 017b49fcdfb5513409d166923abea592,
-    type: 2}
-  m_PrefabInternal: {fileID: 1503816377}
-  m_GameObject: {fileID: 82766326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63156ecfa5e4b7d44b48c58e4bc8f450, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xcoor: 10
-  ycoor: 10
-  paper: 0
-  ammo: 0
-  food: 0
 --- !u!81 &82766329
 AudioListener:
   m_ObjectHideFlags: 0
@@ -422,6 +405,22 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+--- !u!114 &82766333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 82766326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4961361064280404f9d4757c2131fd36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xcoor: 10
+  ycoor: 10
+  health: 0
+  ammo: 0
+  score: 0
 --- !u!1 &107168067
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,6 +3366,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6500000, guid: 017b49fcdfb5513409d166923abea592, type: 2}
+    - {fileID: 11400004, guid: 017b49fcdfb5513409d166923abea592, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 017b49fcdfb5513409d166923abea592, type: 2}
   m_RootGameObject: {fileID: 819105278}
   m_IsPrefabParent: 0
