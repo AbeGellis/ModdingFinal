@@ -13,27 +13,30 @@ public class FollowBrain : Brain {
 	
 	override public void Update () {
 		base.Update();
-		
-		//Vector describing difference between player/character positions
-		Vector3 toPlayer = CharacterControl.player.transform.position - body.transform.position;
-		
-		//Turn to face player
-		Look(toPlayer, turnSpeed);
-		
-		if (following) {	//Follows until too close
-			if (toPlayer.magnitude < closeDistance)
-				following = false;
-			else {
-				//Only follow if looking in player's general direction
-				if (Vector3.Angle(toPlayer, transform.forward) < 45f)	{
-					body.Move(body.transform.forward);
-					print ("Moving");
+
+		if (CharacterControl.player != null) {
+
+			//Vector describing difference between player/character positions
+			Vector3 toPlayer = CharacterControl.player.transform.position - body.transform.position;
+			
+			//Turn to face player
+			Look(toPlayer, turnSpeed);
+			
+			if (following) {	//Follows until too close
+				if (toPlayer.magnitude < closeDistance)
+					following = false;
+				else {
+					//Only follow if looking in player's general direction
+					if (Vector3.Angle(toPlayer, transform.forward) < 45f)	{
+						body.Move(body.transform.forward);
+						print ("Moving");
+					}
 				}
 			}
-		}
-		else {	//Waits until too far
-			if (toPlayer.magnitude > farDistance)
-				following = true;
+			else {	//Waits until too far
+				if (toPlayer.magnitude > farDistance)
+					following = true;
+			}
 		}
 	}
 }
