@@ -151,7 +151,6 @@ GameObject:
   - 4: {fileID: 417871025}
   - 23: {fileID: 417871024}
   - 102: {fileID: 417871023}
-  - 114: {fileID: 417871027}
   m_Layer: 0
   m_Name: instructions
   m_TagString: Untagged
@@ -211,18 +210,6 @@ Transform:
   m_LocalScale: {x: 6.45264244, y: 6.45264244, z: 6.45264244}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &417871027
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 417871022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b904e112e8043cf43b49515f52d87092, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instruct: {fileID: 417871023}
 --- !u!1 &481553770
 GameObject:
   m_ObjectHideFlags: 0
