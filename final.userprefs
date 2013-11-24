@@ -1,8 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\Unity\class\Assets\11-12-13\playerInput.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\GUIupdate.cs">
     <Files>
       <File FileName="..\Unity\class\Assets\11-12-13\playerInput.cs" Line="25" Column="65" />
+      <File FileName="Assets\scripts\instructions.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\clicktoMove.cs" Line="7" Column="17" />
+      <File FileName="Assets\scripts\GUItest.cs" Line="4" Column="1" />
+      <File FileName="Assets\scripts\GUIupdate.cs" Line="38" Column="52" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
