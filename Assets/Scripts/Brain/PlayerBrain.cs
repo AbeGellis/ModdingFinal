@@ -10,6 +10,9 @@ public class PlayerBrain : Brain {
 	public KeyCode right;
 	
 	public float mouseSensitivity = 1f;
+
+	public float camAngleUpperBound = 60f;	//Highest angle the camera can rise
+	public float camAngleLowerBound = 30f;	//Lowest angle the camera can dip
 	
 	Camera cam;
 	
@@ -51,6 +54,19 @@ public class PlayerBrain : Brain {
 		Vector3 mouseDiff = new Vector3(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"), 0f) * mouseSensitivity;
 		Turn(new Vector3(mouseDiff.x, -mouseDiff.y, 0f));
 		cam.transform.RotateAround(body.transform.position, body.transform.right, -mouseDiff.y);
+
+		float yawAngle = Vector3.Angle(body.transform.forward, cam.transform.forward);
+
+		//Enforces camera constraints
+		if (cam.transform.forward.y < 0) {
+			if (yawAngle > camAngleUpperBound)
+				cam.transform.RotateAround(body.transform.position, body.transform.right, camAngleUpperBound-yawAngle);
+		}
+		else {
+			if (yawAngle > camAngleLowerBound)
+				cam.transform.RotateAround(body.transform.position, body.transform.right, yawAngle-camAngleLowerBound);
+		}
+
 		//Locks the cursor into the screen if the screen is active and the cursor is over it
 		if (new Rect(0f, 0f, Screen.width, Screen.height).Contains(Input.mousePosition)) {
 			Screen.lockCursor = true;
