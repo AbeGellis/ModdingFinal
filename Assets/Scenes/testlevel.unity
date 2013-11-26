@@ -878,8 +878,9 @@ GameObject:
   - 33: {fileID: 87934924}
   - 65: {fileID: 87934923}
   - 23: {fileID: 87934922}
+  - 114: {fileID: 87934926}
   m_Layer: 0
-  m_Name: color changer red
+  m_Name: color changer green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,6 +937,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &87934926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 87934921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18744c475d84f8243b87c7067b480b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 1
 --- !u!1 &89677044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3581,6 +3594,7 @@ GameObject:
   - 33: {fileID: 494096691}
   - 65: {fileID: 494096690}
   - 23: {fileID: 494096689}
+  - 114: {fileID: 494096693}
   m_Layer: 0
   m_Name: color changer blue
   m_TagString: Untagged
@@ -3639,6 +3653,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
+--- !u!114 &494096693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 494096688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18744c475d84f8243b87c7067b480b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 2
+=======
 --- !u!1001 &494266729
 Prefab:
   m_ObjectHideFlags: 0
@@ -3679,6 +3707,7 @@ Prefab:
   m_RootGameObject: {fileID: 1937873739}
   m_IsPrefabParent: 0
   m_IsExploded: 1
+>>>>>>> bce50a5a3080db8803167656e9f710de06e860c3
 --- !u!1001 &510543474
 Prefab:
   m_ObjectHideFlags: 0
@@ -7129,10 +7158,14 @@ Light:
   serializedVersion: 3
   m_Type: 2
 <<<<<<< HEAD
+  m_Color: {r: .925490201, g: .984313726, b: .552941203, a: 1}
+=======
+<<<<<<< HEAD
   m_Color: {r: .973102868, g: .970804513, b: .985294104, a: 1}
 =======
   m_Color: {r: .547566712, g: .505244374, b: .772058845, a: 1}
 >>>>>>> 09fdcf071bbb81a599b95ea8631484af7c5a5550
+>>>>>>> bce50a5a3080db8803167656e9f710de06e860c3
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -9572,7 +9605,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &1430373583
 Light:
   m_ObjectHideFlags: 0
@@ -14357,6 +14390,7 @@ GameObject:
   - 33: {fileID: 2080760154}
   - 65: {fileID: 2080760153}
   - 23: {fileID: 2080760152}
+  - 114: {fileID: 2080760156}
   m_Layer: 0
   m_Name: color changer red
   m_TagString: Untagged
@@ -14415,6 +14449,18 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!114 &2080760156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2080760151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18744c475d84f8243b87c7067b480b14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  color: 0
 --- !u!1001 &2086593573
 Prefab:
   m_ObjectHideFlags: 0
