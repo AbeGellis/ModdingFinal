@@ -11,8 +11,14 @@ using System.Collections;
 public class GUIStyletest : MonoBehaviour {
 
     public GUIStyle buttonStyle;
-    int xcoor = 60;
-    int ycoor = 145;
+
+    //xcoor and ycoor are the coordinates of the top left corner of GUIText rectangles
+    int xcoor = 200;
+    int ycoor = 370;
+
+    //xoffset and yoffset describe the coordinates of text relative to "INSTRUCTIONS" which is on top.
+    int yoffset = 75;
+    int xoffset = 75;
 
 	// Use this for initialization
 	void Start () {
@@ -46,8 +52,8 @@ public class GUIStyletest : MonoBehaviour {
     void OnGUI()
     {
         GUI.Button(new Rect(xcoor, ycoor, 100, 100), "INSTRUCTIONS", buttonStyle);
-        GUI.Button(new Rect(xcoor, ycoor + 25, 100, 100), "LEVEL SELECT", buttonStyle);
-        GUI.Button(new Rect(xcoor + 40, ycoor + 50, 100, 100), "PLAY", buttonStyle);
+        GUI.Button(new Rect(xcoor, ycoor + yoffset, 100, 100), "LEVEL SELECT", buttonStyle);
+        GUI.Button(new Rect(xcoor + xoffset, ycoor + (yoffset * 2), 100, 100), "PLAY", buttonStyle);
         //if( GUI.Button(new Rect(xcoor, ycoor, 100, 100), "INSTRUCTIONS", buttonStyle ));
         //{
         //    Application.LoadLevel("overworld");
