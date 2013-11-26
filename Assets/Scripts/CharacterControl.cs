@@ -16,7 +16,7 @@ public class CharacterControl : MonoBehaviour {
 	
 	public float stopSpeed = .2f;	//Minimum threshold to keep moving
 	public float drag = 2f; 		//Friction while grounded
-	
+
 	bool grounded;	//On ground or not
 	bool jump; //About to jump
 	bool rise; //Rising with variable jumping

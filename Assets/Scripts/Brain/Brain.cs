@@ -10,8 +10,23 @@ public class Brain : MonoBehaviour {
 	protected CharacterControl body;
 
 	//Current color
-	public ColorArea.CharColor color = ColorArea.CharColor.None;
-	
+	public ColorArea.CharColor color;
+
+	//Shows color
+	public bool colorVisible = true;
+
+	//Mutator for color
+	public void setColor(ColorArea.CharColor color) {
+		if (this.color != color) {
+			this.color = color;
+			body.renderer.material.color = ColorArea.GetPallete(color);
+		}
+	}
+
+	void Start() {
+		body.renderer.material.color = ColorArea.GetPallete(color);	//Initial tint
+	}
+
 	//Matches it to the body
 	virtual public void Assign(CharacterControl body) {
 		this.body = body;

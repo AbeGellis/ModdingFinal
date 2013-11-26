@@ -75,10 +75,7 @@ public class PlayerBrain : Brain {
 
 	override public void TouchColorArea(ColorArea.CharColor touch) {
 		Debug.Log("Touched object of color: :" + ColorArea.GetPallete(touch).ToString());
-		if (color != touch) {
-			color = touch;
-			body.renderer.material.color = ColorArea.GetPallete(color);
-		}
+		setColor(touch);
 	}
 	
 	override public void TouchCharacter(CharacterControl other) {
