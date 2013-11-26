@@ -17,7 +17,12 @@ public class PlayerBrain : Brain {
 		base.Assign(body);
 		CharacterControl.player = body;
 	}
-	
+
+	override public void Kill() {
+		Camera.main.transform.parent = null;
+		base.Kill();
+	}
+
 	//Input to controls
 	override public void Update () {
 		base.Update();
@@ -49,8 +54,18 @@ public class PlayerBrain : Brain {
 		//Locks the cursor into the screen if the screen is active and the cursor is over it
 		if (new Rect(0f, 0f, Screen.width, Screen.height).Contains(Input.mousePosition)) {
 			Screen.lockCursor = true;
-			
-		
 		}
+	}
+
+	override public void TouchColorArea(ColorArea.CharColor touch) {
+		Debug.Log("Touched object of color: :" + ColorArea.GetPallete(touch).ToString());
+		color = touch;
+	}
+	
+	override public void TouchCharacter(CharacterControl other) {
+		if (other.brain.color == color)
+			other.brain.Kill();
+		else
+			Kill();
 	}
 }

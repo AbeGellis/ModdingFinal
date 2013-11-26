@@ -35,7 +35,11 @@ public class CharacterControl : MonoBehaviour {
 		characters.Add(this);
 		brain.Assign(this);
 	}
-	
+
+	public void TouchColorArea(ColorArea.CharColor touch) {
+		brain.TouchColorArea(touch);
+	}
+
 	//Applies given movement to movement in next update
 	public void Move(Vector3 move) {
 		horizontalMove += move;
@@ -60,7 +64,14 @@ public class CharacterControl : MonoBehaviour {
 	public void Turn(Vector3 changeAngles) {
 		lookChange += changeAngles;
 	}
-	
+
+	void OnCollisionEnter(Collision collision) {
+		CharacterControl character = collision.gameObject.GetComponent<CharacterControl>();
+		if (character != null) {
+			brain.TouchCharacter(character);
+		}
+	}
+
 	void Update() {
 		brain.Update();
 	}

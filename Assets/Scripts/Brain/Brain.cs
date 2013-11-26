@@ -8,10 +8,17 @@ public class Brain : MonoBehaviour {
 	
 	//Body this is attached to
 	protected CharacterControl body;
+
+	//Current color
+	public ColorArea.CharColor color = ColorArea.CharColor.None;
 	
 	//Matches it to the body
 	virtual public void Assign(CharacterControl body) {
 		this.body = body;
+	}
+
+	virtual public void Kill() {
+		Destroy(this.body.gameObject);
 	}
 	
 	//Turns both the sight and the body
@@ -63,6 +70,15 @@ public class Brain : MonoBehaviour {
 	//Override this for update-cycle logic
 	virtual public void Update () {
 		//Lets you see where the character is looking
-		Debug.DrawRay(body.transform.position, transform.forward * 3f, Color.blue);
+		//Debug.DrawRay(body.transform.position, transform.forward * 3f, Color.blue);
+	}
+
+	//When the body touches a colorarea
+	virtual public void TouchColorArea(ColorArea.CharColor touch) {
+	}
+
+	//When the body touches another body
+	virtual public void TouchCharacter(CharacterControl other) {
+
 	}
 }
