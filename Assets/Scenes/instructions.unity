@@ -498,7 +498,7 @@ MonoBehaviour:
       m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Hover:
       m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+      m_TextColor: {r: .963235319, g: .028330477, b: .028330477, a: 1}
     m_Active:
       m_Background: {fileID: 0}
       m_TextColor: {r: .0220588446, g: .0223832391, b: .0223832391, a: 1}
