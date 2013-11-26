@@ -24,7 +24,7 @@ public class ColorArea : MonoBehaviour {
 	}
 
 	void Start () {
-	
+		particleSystem.startColor = GetPallete(color);
 	}
 	
 	void Update () {
