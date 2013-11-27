@@ -494,11 +494,11 @@ MonoBehaviour:
   buttonStyle:
     m_Name: 
     m_Normal:
-      m_Background: {fileID: 2800000, guid: b3bd89e8cbfd5de44b87ac84969fc35f, type: 3}
+      m_Background: {fileID: 0}
       m_TextColor: {r: 1, g: 1, b: 1, a: 1}
     m_Hover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: .963235319, g: .028330477, b: .028330477, a: 1}
+      m_Background: {fileID: 2800000, guid: 3c0b9bccbcfd62f48a6c84d7a96b6161, type: 3}
+      m_TextColor: {r: .0978049338, g: .492647052, b: .100527965, a: 1}
     m_Active:
       m_Background: {fileID: 0}
       m_TextColor: {r: .0220588446, g: .0223832391, b: .0223832391, a: 1}
@@ -537,7 +537,7 @@ MonoBehaviour:
       m_Right: 0
       m_Top: 0
       m_Bottom: 0
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 54c109a3f057f7444a95a3af6f062788, type: 3}
     m_FontSize: 40
     m_FontStyle: 1
     m_Alignment: 0

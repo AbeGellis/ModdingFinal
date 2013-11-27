@@ -32,20 +32,20 @@ public class GUIStyletest : MonoBehaviour {
 
     void OnGUI()
     {
-        //make the hover color of text red
-        buttonStyle.hover.textColor = Color.red;
 
         //clicking any of these buttons results in loading the relevant level
-        if (GUI.Button(new Rect(xcoor, ycoor, 100, 100), "INSTRUCTIONS", buttonStyle))
+        if (GUI.Button(new Rect(xcoor-10, ycoor, 340, 50), " INSTRUCTIONS", buttonStyle))
             Application.LoadLevel("overworld");
 
-        if (GUI.Button(new Rect(xcoor + xoffset, ycoor + (yoffset * 2), 100, 100), "PLAY", buttonStyle))
-            Application.LoadLevel("testlevel");
-
-        if( GUI.Button(new Rect(xcoor, ycoor + yoffset, 100, 100), "LEVEL SELECT", buttonStyle ))
+        //to be replaced by a tutorial
+        if (GUI.Button(new Rect(xcoor, ycoor + yoffset, 320, 60), " LEVEL SELECT", buttonStyle))
         {
             Application.LoadLevel("overworld");
         }
+
+        if (GUI.Button(new Rect(xcoor + xoffset, ycoor + (yoffset * 2), 150, 50), " PLAY!", buttonStyle))
+            Application.LoadLevel("testlevel");
+
 
     }
 }

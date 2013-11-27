@@ -746,7 +746,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1821998549}
-  mouseClicked: {fileID: 1821998555}
 --- !u!1001 &434413146
 Prefab:
   m_ObjectHideFlags: 0
@@ -3307,7 +3306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 1821998549}
-  mouseClicked: {fileID: 1821998555}
 --- !u!1001 &1463078320
 Prefab:
   m_ObjectHideFlags: 0
