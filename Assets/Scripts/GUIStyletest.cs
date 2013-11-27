@@ -37,7 +37,7 @@ public class GUIStyletest : MonoBehaviour {
 
         //clicking any of these buttons results in loading the relevant level
         if (GUI.Button(new Rect(xcoor, ycoor, 100, 100), "INSTRUCTIONS", buttonStyle))
-            Application.LoadLevel("testlevel");
+            Application.LoadLevel("overworld");
 
         if (GUI.Button(new Rect(xcoor + xoffset, ycoor + (yoffset * 2), 100, 100), "PLAY", buttonStyle))
             Application.LoadLevel("testlevel");
