@@ -20,7 +20,7 @@ public class WalkerBrain : Brain {
 
 			//Vector describing difference between player/character positions
 			Vector3 toPlayer = CharacterControl.player.transform.position - body.transform.position;
-			
+
 			//Check to see if player is within view
 			Ray sightLine = new Ray(body.transform.position, toPlayer);
 			RaycastHit sightRay = new RaycastHit();

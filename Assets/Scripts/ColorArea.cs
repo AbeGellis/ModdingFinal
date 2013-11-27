@@ -7,7 +7,7 @@ public class ColorArea : MonoBehaviour {
 	public enum CharColor { Red, Green, Blue, Orange, Yellow, Purple, None };
 	//Corresponding color objects
 	static Color[] CharPallete = new Color[7] {Color.red, Color.green, Color.blue, 
-		new Color(1f, .5f, 0f), Color.yellow, new Color(1f, 0f, 1f), Color.clear};
+		new Color(1f, .5f, 0f), Color.yellow, new Color(1f, 0f, 1f), Color.white};
 
 	public CharColor color;
 
@@ -24,7 +24,7 @@ public class ColorArea : MonoBehaviour {
 	}
 
 	void Start () {
-	
+		particleSystem.startColor = GetPallete(color);
 	}
 	
 	void Update () {
