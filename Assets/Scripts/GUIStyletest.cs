@@ -32,6 +32,9 @@ public class GUIStyletest : MonoBehaviour {
 
     void OnGUI()
     {
+        //make the hover color of text red
+        buttonStyle.hover.textColor = Color.red;
+
         //clicking any of these buttons results in loading the relevant level
         if (GUI.Button(new Rect(xcoor, ycoor, 100, 100), "INSTRUCTIONS", buttonStyle))
             Application.LoadLevel("testlevel");

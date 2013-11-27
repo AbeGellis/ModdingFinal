@@ -2,15 +2,14 @@
 using System.Collections;
 
 /*Brian Kang
- *11-12-13
- * when player goes into trigger, kill velocity and load "testlevel"
- * should maybe change the script so that a misclick doesn't lead to loading a level automatically.
+ * 11-26-13 update
+ * added invisible walls to the level so that a misclick no longer applies. all misclick counts, etc have been commented out
  */
 public class endtrigger2 : MonoBehaviour
 {
 
     public GameObject character;
-    public clicktoMove mouseClicked;
+   // public clicktoMove mouseClicked;
 
     // Use this for initialization
     void Start()
@@ -28,7 +27,7 @@ public class endtrigger2 : MonoBehaviour
     {
         character.rigidbody.velocity = Vector3.zero;
         //change the mouseClicked bool in clicktoMove to false so that when overworld level loads again, movement can resume.
-        mouseClicked.mouseClicked = false;
+      //  mouseClicked.mouseClicked = false;
 
         //load Max's "zombie" test level
         Application.LoadLevel("testlevel");
