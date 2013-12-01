@@ -77,6 +77,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -110,6 +113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3db95259afd386419de2354e51fdf11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  color: 0
+  colorVisible: 1
+  pointsWorth: 10
   turnSpeed: 1
   closeDistance: 0
   farDistance: .5

@@ -11523,6 +11523,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 6
   colorVisible: 1
+  pointsWorth: 0
   forward: 119
   back: 115
   left: 97
@@ -18607,6 +18608,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 2007326285}
   - 132: {fileID: 2007326284}
+  - 114: {fileID: 2007326286}
   m_Layer: 0
   m_Name: TEXT - SCORE
   m_TagString: Untagged
@@ -18649,6 +18651,17 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 583025361}
+--- !u!114 &2007326286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2007326283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76a4ec17c170d27478737dc128328cc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2009692393
 GameObject:
   m_ObjectHideFlags: 0

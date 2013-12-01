@@ -15,6 +15,9 @@ public class Brain : MonoBehaviour {
 	//Shows color
 	public bool colorVisible = true;
 
+	//How many points you get when it dies
+	public int pointsWorth = 0;
+
 	//Mutator for color
 	public void setColor(ColorArea.CharColor color) {
 		if (this.color != color) {
@@ -33,6 +36,7 @@ public class Brain : MonoBehaviour {
 	}
 
 	virtual public void Kill() {
+		ScoreControl.score += pointsWorth;
 		Destroy(this.body.gameObject);
 	}
 	
