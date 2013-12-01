@@ -3,8 +3,8 @@ using System.Collections;
 
 /*
  * Brian Kang 
- * 11-10-13
- * Click to move to some location in the overworld. Question: what happens when Application.LoadLevel is called? Basically, can I use a bool for # times mouse is clicked?
+ * 11-30-13
+ * Describes movement in the level select. Click to move.
  */
 public class clicktoMove : MonoBehaviour {
 	
@@ -15,7 +15,7 @@ public class clicktoMove : MonoBehaviour {
 	Vector3 destination = new Vector3(388f, 3f, 140f); 
 	Vector3 direction;
     float speed = 40f;
-	public bool mouseClicked = false;
+	//public bool mouseClicked = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -35,10 +35,10 @@ public class clicktoMove : MonoBehaviour {
 		RaycastHit rayHit = new RaycastHit();
 		
 		//when left mouse button is pressed and ray hits something, move the object
-		if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray_cursor, out rayHit, 1000f) && mouseClicked == false)
+		if (Input.GetMouseButtonDown(0) && Physics.Raycast(ray_cursor, out rayHit, 1000f))
 		{
 			//if the mouse was clicked before, do not go. Do not interfere with movement once it has started. OnTriggerEnter() should have mouseClick controls.
-			mouseClicked = true;
+			//mouseClicked = true;
 			
 			//set destination and direction
 			destination = rayHit.point;

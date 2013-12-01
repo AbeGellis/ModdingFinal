@@ -8,6 +8,11 @@ using System.Collections;
  * Eventually want the color of the text to change on mouseover, and load level on button click
  * Maybe display a graphic of paint splashes. Juiciness can come later.
  */
+
+/*
+ * 11-30-13
+ * Working "as intended" - creates the menu options for the title screen.
+ */
 public class GUIStyletest : MonoBehaviour {
 
     public GUIStyle buttonStyle;
