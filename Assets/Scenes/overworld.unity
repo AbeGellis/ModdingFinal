@@ -288,7 +288,6 @@ GameObject:
   - 92: {fileID: 205510182}
   - 124: {fileID: 205510181}
   - 81: {fileID: 205510180}
-  - 114: {fileID: 205510185}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -357,22 +356,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &205510185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 205510179}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63156ecfa5e4b7d44b48c58e4bc8f450, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xcoor: 10
-  ycoor: 10
-  paper: 0
-  ammo: 0
-  food: 0
 --- !u!1 &230776624
 GameObject:
   m_ObjectHideFlags: 0
@@ -3539,7 +3522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b857d60c53e51a43bec1dcfcdbee8d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseClicked: 0
 --- !u!1 &1864787071
 GameObject:
   m_ObjectHideFlags: 0

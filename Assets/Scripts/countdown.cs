@@ -25,6 +25,8 @@ public class countdown : MonoBehaviour {
         int timeLeft = endTime - (int)Time.time;
         countdownTimer.text = "" + timeLeft;
 
+        if (timeLeft <= 0)
+            Application.LoadLevel("GameOver");
 	
 	}
 }
