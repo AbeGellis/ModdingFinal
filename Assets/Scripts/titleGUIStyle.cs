@@ -1,19 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/*
- * 11-20-13
- * Intended as a test for using GUIStyles (specifically will be used with title scene when ready)
- * Not working yet; simply click anywhere to advance to level select. 
- * Eventually want the color of the text to change on mouseover, and load level on button click
- * Maybe display a graphic of paint splashes. Juiciness can come later.
- */
 
 /*
  * 11-30-13
  * Working "as intended" - creates the menu options for the title screen.
  */
-public class GUIStyletest : MonoBehaviour {
+public class titleGUIStyle : MonoBehaviour {
 
     public GUIStyle buttonStyle;
 

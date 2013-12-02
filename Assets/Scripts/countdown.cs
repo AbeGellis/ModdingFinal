@@ -3,18 +3,20 @@ using System.Collections;
 
 /*
  * 11-30-13
- * In-game timer. Start at 100 seconds, end game at 0 seconds. 
+ * In-game timer. Start at x seconds, end game at 0 seconds. 
  * Additional: Gain time for killing enemies, lose time for dying.
  */
 public class countdown : MonoBehaviour {
 
     public GUIText countdownTimer; //attach relevant GUIText in inspector
     int endTime;
+    public int timerSet;
 
 	// Use this for initialization
 	void Start () {
         //"floor" Time.deltaTime in order to have a clean int value to pass onto GUIText
-        endTime = (int)Time.time + 100;
+        timerSet = 40;
+        endTime = (int)Time.time + timerSet;
         countdownTimer.text = "" + endTime;
 	}
 	
