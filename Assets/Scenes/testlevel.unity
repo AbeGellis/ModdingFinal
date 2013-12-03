@@ -3053,11 +3053,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -13.7853813
+      value: -13.6043682
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 4.26752853
+      value: 5.05599689
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3082,7 +3082,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 57b596136cac5470a80facdb6fe3bf7e, type: 2}
+      objectReference: {fileID: 2100000, guid: 92ea595d55d6cc944b4b6bc5248dc674, type: 2}
     - target: {fileID: 100000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_Name
       value: Color Changer Red
@@ -4132,7 +4132,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2ec7e9190939ec442bb8da85ce8348f5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4532,15 +4532,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 89.416481
+      value: 91.0701218
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 10.7750788
+      value: 11.4746494
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -77.5265656
+      value: -78.905838
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4569,7 +4569,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 379de0c2c93d04a80b10bd632f4acf03, type: 2}
+      objectReference: {fileID: 2100000, guid: 7263b5fd3945c7d41a2edfd8f6dc2ec4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b2fc8a5bf5ec7d44a9717fdfb692687, type: 2}
   m_RootGameObject: {fileID: 1214543100}
@@ -5855,7 +5855,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 379de0c2c93d04a80b10bd632f4acf03, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -6011,6 +6011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 1684668028}
+  timerSet: 0
 --- !u!1001 &592837479
 Prefab:
   m_ObjectHideFlags: 0
@@ -7649,70 +7650,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66abd48a99641b439ab5090d63ad568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 2800000, guid: 19a5f42b6ba98f84aa2aefc1b4618fb4, type: 3}
-      m_TextColor: {r: .970588207, g: .97772491, b: .97772491, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: .970588207, g: .956314862, b: .956314862, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_Alignment: 0
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
-  xcoor: 10
-  ycoor: 10
-  health: 0
-  ammo: 0
-  score: 0
 --- !u!1 &856713868
 GameObject:
   m_ObjectHideFlags: 0
@@ -11402,7 +11339,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 379de0c2c93d04a80b10bd632f4acf03, type: 2}
+  - {fileID: 2100000, guid: 7263b5fd3945c7d41a2edfd8f6dc2ec4, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -11439,7 +11376,7 @@ Transform:
   m_PrefabInternal: {fileID: 396192056}
   m_GameObject: {fileID: 1214543100}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.416481, y: 10.7750788, z: -77.5265656}
+  m_LocalPosition: {x: 91.0701218, y: 11.4746494, z: -78.905838}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13025,7 +12962,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 57b596136cac5470a80facdb6fe3bf7e, type: 2}
+  - {fileID: 2100000, guid: 92ea595d55d6cc944b4b6bc5248dc674, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -13062,7 +12999,7 @@ Transform:
   m_PrefabInternal: {fileID: 214392041}
   m_GameObject: {fileID: 1273032482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.7853813, y: 4.26752853, z: -68.5269012}
+  m_LocalPosition: {x: -13.6043682, y: 5.05599689, z: -68.5269012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13931,7 +13868,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 6117bebf33a51415692da3dd4d2f40bf, type: 2}
+  - {fileID: 2100000, guid: 2ec7e9190939ec442bb8da85ce8348f5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -15666,7 +15603,6 @@ GameObject:
   - 23: {fileID: 1612865468}
   - 54: {fileID: 1612865467}
   - 114: {fileID: 1612865466}
-  - 136: {fileID: 1612865465}
   - 136: {fileID: 1612865470}
   - 82: {fileID: 1612865471}
   m_Layer: 0
@@ -15691,20 +15627,6 @@ Transform:
   - {fileID: 840252769}
   - {fileID: 803379182}
   m_Father: {fileID: 0}
---- !u!136 &1612865465
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 13600000, guid: 017b49fcdfb5513409d166923abea592,
-    type: 2}
-  m_PrefabInternal: {fileID: 1826452163}
-  m_GameObject: {fileID: 1612865463}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1612865466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17458,8 +17380,13 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 13600002, guid: 017b49fcdfb5513409d166923abea592, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11400004, guid: 017b49fcdfb5513409d166923abea592, type: 2}
+    - {fileID: 13600000, guid: 017b49fcdfb5513409d166923abea592, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 017b49fcdfb5513409d166923abea592, type: 2}
   m_RootGameObject: {fileID: 1612865463}
   m_IsPrefabParent: 0
@@ -17865,7 +17792,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 6117bebf33a51415692da3dd4d2f40bf, type: 2}
+  - {fileID: 2100000, guid: 2ec7e9190939ec442bb8da85ce8348f5, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
