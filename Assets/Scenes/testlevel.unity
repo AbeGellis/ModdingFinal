@@ -5976,6 +5976,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 583025361}
   - 114: {fileID: 583025362}
+  - 114: {fileID: 583025363}
   m_Layer: 0
   m_Name: ze GUI stuff
   m_TagString: Untagged
@@ -6011,6 +6012,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 1684668028}
+  timerSet: 0
+--- !u!114 &583025363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 583025360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4794381d8be960843a27dc93cb99c497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &592837479
 Prefab:
   m_ObjectHideFlags: 0
@@ -7649,70 +7662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e66abd48a99641b439ab5090d63ad568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreStyle:
-    m_Name: 
-    m_Normal:
-      m_Background: {fileID: 2800000, guid: 19a5f42b6ba98f84aa2aefc1b4618fb4, type: 3}
-      m_TextColor: {r: .970588207, g: .97772491, b: .97772491, a: 1}
-    m_Hover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Active:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: .970588207, g: .956314862, b: .956314862, a: 1}
-    m_Focused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnNormal:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnHover:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnActive:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_OnFocused:
-      m_Background: {fileID: 0}
-      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
-    m_Border:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Margin:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Padding:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Overflow:
-      m_Left: 0
-      m_Right: 0
-      m_Top: 0
-      m_Bottom: 0
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
-    m_FontStyle: 0
-    m_Alignment: 0
-    m_WordWrap: 0
-    m_RichText: 1
-    m_TextClipping: 0
-    m_ImagePosition: 0
-    m_ContentOffset: {x: 0, y: 0}
-    m_FixedWidth: 0
-    m_FixedHeight: 0
-    m_StretchWidth: 1
-    m_StretchHeight: 0
-  xcoor: 10
-  ycoor: 10
-  health: 0
-  ammo: 0
-  score: 0
 --- !u!1 &856713868
 GameObject:
   m_ObjectHideFlags: 0
