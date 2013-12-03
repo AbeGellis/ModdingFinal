@@ -92,7 +92,7 @@ public class CharacterControl : MonoBehaviour {
 		//Grounded check
 		Ray checkGround = new Ray(transform.position, Vector3.down);
 		
-		grounded = (Mathf.Abs(rigidbody.velocity.y) < 2f && Physics.Raycast(checkGround, 1f) );
+		grounded = (Mathf.Abs(rigidbody.velocity.y) < 4f && Physics.Raycast(checkGround, 1.2f) );
 		
 		//Apply jump
 		if (jump) {

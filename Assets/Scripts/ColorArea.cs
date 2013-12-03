@@ -25,6 +25,7 @@ public class ColorArea : MonoBehaviour {
 
 	void Start () {
 		particleSystem.startColor = GetPallete(color);
+		light.color = Color.Lerp(GetPallete(color), Color.white, .5f);
 	}
 	
 	void Update () {
