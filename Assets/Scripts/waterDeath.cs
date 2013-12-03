@@ -8,6 +8,8 @@ using System.Collections;
 public class waterDeath : MonoBehaviour {
 	
 	Vector3 startPosition; //remember the player's starting position
+    public GameObject lifeObject;
+    int count; //count number of times trigger has been entered.
 	
 	// Use this for initialization
 	void Start () {
@@ -21,9 +23,19 @@ public class waterDeath : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider swimmer)
 	{
+        count++;
+
 		//"respawn" player when they hit the water
 		if (swimmer.gameObject == CharacterControl.player.gameObject)
+        {
+            //delete a heart for every death.
+                lifeControl.lives --;
+                lifeObject.GetComponent<lifeControl>().removeHeart();
+
+            //respawn player
 			swimmer.gameObject.transform.position = startPosition;
+            swimmer.rigidbody.velocity = Vector3.zero;
+        }
 		else
 			Destroy(swimmer.gameObject);
 	}

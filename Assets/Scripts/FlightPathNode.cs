@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 public class FlightPathNode : MonoBehaviour {
 	static FlightPathControl controller;
-	public List<FlightPathNode> neighbors = new List<FlightPathNode>();		//Nodes this node can see
+	public Dictionary<FlightPathNode, float> neighbors = new Dictionary<FlightPathNode, float>();		//Nodes this node can see
 	//List<int> neighborsDistances = new List<int>();		//Distance to each node
 
-	public int dist = int.MaxValue;			//Distance to player
+	public float dist = int.MaxValue;			//Distance to player
 	bool setup = false;
 
 
@@ -26,9 +26,11 @@ public class FlightPathNode : MonoBehaviour {
 		//Done here instead of Start() to allow for colliders to intialize properly
 		if (!setup) {
 			foreach (FlightPathNode n in FlightPathControl.nodes) {
-				if (n != this && !neighbors.Contains(n) && !Physics.Raycast(transform.position, n.transform.position - transform.position)) {
-					n.neighbors.Add(this);
-					neighbors.Add(n);
+				if (n != this && !neighbors.ContainsKey(n) && !Physics.Raycast(transform.position, n.transform.position - transform.position)) {
+					float distance = Vector3.Distance(n.transform.position, transform.position); 
+					n.neighbors.Add(this, distance);
+					neighbors.Add(n, distance);
+					Debug.DrawLine(transform.position, n.transform.position, Color.cyan, 10f);
 				}
 			}
 			setup = true;
