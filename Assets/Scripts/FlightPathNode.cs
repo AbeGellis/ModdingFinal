@@ -30,10 +30,10 @@ public class FlightPathNode : MonoBehaviour {
 					float distance = Vector3.Distance(n.transform.position, transform.position); 
 					n.neighbors.Add(this, distance);
 					neighbors.Add(n, distance);
-					Debug.DrawLine(transform.position, n.transform.position, Color.cyan, 10f);
 				}
 			}
 			setup = true;
 		}
+		print (neighbors.ToString());
 	}
 }

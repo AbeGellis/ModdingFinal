@@ -15,7 +15,7 @@ public class HoverControl : MonoBehaviour {
 		foreach (FlightPathNode n in FlightPathControl.nodes) { 
 			float distToNode = Vector3.Distance(n.transform.position, transform.position);
 			if(distToNode > .1f && n.dist != int.MaxValue) {
-				if (!Physics.Raycast(transform.position, n.transform.position - transform.position)) {
+				if (!Physics.Raycast(transform.position, n.transform.position - transform.position, out sightLine)) {
 					float fullpath = distToNode + n.dist;
 					if (fullpath < dist) {
 						dist = fullpath;
@@ -23,8 +23,6 @@ public class HoverControl : MonoBehaviour {
 					}
 				}
 			}
-
-			Debug.DrawLine(transform.position, n.transform.position, Color.red);
 		}
 
 		Vector3 toPlayer = CharacterControl.player.transform.position - transform.position;
