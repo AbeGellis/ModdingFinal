@@ -4,7 +4,7 @@ using System.Collections;
 public class ColorArea : MonoBehaviour {
 
 	//Available colors in the game
-	public enum CharColor { Red, Green, Blue, Orange, Yellow, Purple, None };
+	public enum CharColor { Red = 0, Green, Blue, Orange, Yellow, Purple, None };
 	//Corresponding color objects
 	static Color[] CharPallete = new Color[7] {Color.red, Color.green, Color.blue, 
 		new Color(1f, .5f, 0f), Color.yellow, new Color(1f, 0f, 1f), Color.white};
@@ -13,6 +13,11 @@ public class ColorArea : MonoBehaviour {
 
 	public static Color GetPallete(CharColor c) {
 		return CharPallete[(int) c];
+	}
+
+	public static CharColor RandomColor() {
+		int r = Random.Range(0, 6);
+		return (CharColor) r;
 	}
 
 	void OnCollisionEnter(Collision collision) {

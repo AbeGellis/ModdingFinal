@@ -6048,7 +6048,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 1684668028}
-  timerSet: 0
+  time: 0
+  scoreBonusRate: 5
 --- !u!1001 &592837479
 Prefab:
   m_ObjectHideFlags: 0
