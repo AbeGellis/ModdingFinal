@@ -4,10 +4,10 @@ using System.Collections;
 public class ColorArea : MonoBehaviour {
 
 	//Available colors in the game
-	public enum CharColor { Red = 0, Green, Blue, Orange, Yellow, Purple, None };
+	public enum CharColor { Red = 0, Green, Blue, None}; // Orange, Yellow, Purple, None };
 	//Corresponding color objects
-	static Color[] CharPallete = new Color[7] {Color.red, Color.green, Color.blue, 
-		new Color(1f, .5f, 0f), Color.yellow, new Color(1f, 0f, 1f), Color.white};
+	static Color[] CharPallete = new Color[4] {Color.red, Color.green, Color.blue, Color.white};
+		//new Color(1f, .5f, 0f), Color.yellow, new Color(1f, 0f, 1f), Color.white};
 
 	public CharColor color;
 
@@ -16,7 +16,7 @@ public class ColorArea : MonoBehaviour {
 	}
 
 	public static CharColor RandomColor() {
-		int r = Random.Range(0, 6);
+		int r = Random.Range(0, 3);
 		return (CharColor) r;
 	}
 
@@ -34,6 +34,5 @@ public class ColorArea : MonoBehaviour {
 	}
 	
 	void Update () {
-	
 	}
 }

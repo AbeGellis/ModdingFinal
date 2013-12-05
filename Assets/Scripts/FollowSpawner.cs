@@ -14,20 +14,17 @@ public class FollowSpawner : MonoBehaviour {
 	}
 
 	void Update () {
-		RaycastHit sightLine;
-		Physics.Raycast(transform.position, CharacterControl.player.transform.position, out sightLine);
-		if (sightLine.collider.transform.position != CharacterControl.player.transform.position) {
-			spawnCounter -= Time.deltaTime;
-			if (spawnCounter < 0f) {
-				spawnCounter += spawnCycle;
-				CharacterControl spawn = Instantiate(spawnObject, transform.position + 
-				                                     Vector3.Scale(Random.insideUnitSphere, new Vector3(1f, 0f, 1f)),
-				                                     Quaternion.identity) as CharacterControl;
-				if (spawnColor != ColorArea.CharColor.None)
-					spawn.brain.color = spawnColor;
-				else
-					spawn.brain.color = ColorArea.RandomColor();
-			}
+		spawnCounter -= Time.deltaTime;
+		if (spawnCounter < 0f) {
+			spawnCounter += spawnCycle;
+			CharacterControl spawn = (Instantiate(spawnObject, transform.position + 
+			                                     Vector3.Scale(Random.insideUnitSphere, new Vector3(1f, 0f, 1f)),
+			                                     Quaternion.identity) as GameObject).GetComponent<CharacterControl>();
+
+			if (spawnColor != ColorArea.CharColor.None)
+				spawn.setColor = spawnColor;
+			else
+				spawn.setColor = ColorArea.RandomColor();
 		}
 	}
 }

@@ -20,6 +20,8 @@ public class CharacterControl : MonoBehaviour {
 	bool grounded;	//On ground or not
 	bool jump; //About to jump
 	bool rise; //Rising with variable jumping
+
+	public ColorArea.CharColor setColor = ColorArea.CharColor.None;
 	
 	Vector3 horizontalMove = Vector3.zero;	//Current movement impetus
 	
@@ -73,7 +75,8 @@ public class CharacterControl : MonoBehaviour {
 	}
 
 	void Update() {
-		brain.Update();
+		if (setColor != ColorArea.CharColor.None)
+			brain.setColor(setColor);
 	}
 	
 	void FixedUpdate() {
