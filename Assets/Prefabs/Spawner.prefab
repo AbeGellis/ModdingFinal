@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89.3594055, y: 11.4746494, z: -73.6648254}
+  m_LocalPosition: {x: -13.3235912, y: 7.87371922, z: -60.279213}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -42,7 +42,7 @@ MonoBehaviour:
   spawnCycle: 15
   spawnSpread: 5
   spawnObject: {fileID: 100002, guid: 2cfda9ddc465cdf4991039f201781ef9, type: 2}
-  spawnColor: 6
+  spawnColor: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

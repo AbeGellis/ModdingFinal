@@ -13,6 +13,12 @@ public class WalkerBrain : Brain {
 	
 	bool following = true;	//Whether or not the character is following
 	
+	public float timeBonus, scoreBonus;
+
+	void OnDestroy() {
+		countdown.time += timeBonus;
+	}
+
 	override public void Update () {
 		base.Update();
 

@@ -119,7 +119,9 @@ MonoBehaviour:
   turnSpeed: 1
   closeDistance: 0
   farDistance: .5
-  sightDistance: 10
+  sightDistance: 30
+  timeBonus: 5
+  scoreBonus: 5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,6 +140,7 @@ MonoBehaviour:
   jumpBoost: .550000012
   stopSpeed: .400000006
   drag: 10
+  setColor: 3
   brain: {fileID: 11400000}
 --- !u!136 &13600000
 CapsuleCollider:

@@ -10,24 +10,27 @@ public class countdown : MonoBehaviour {
 
 	//Abe Rewrite:
 	public GUIText countdownTimer;
-	public float time = 0;
-	public float scoreBonusRate = 1f;
+	public float startTime;
+	public static float time = 0;
 
 	float scoreBonusCounter = 0f;
 
 	void Start() {
-
+		time = startTime;
 	}
 
 	void Update() {
-		scoreBonusCounter += Time.deltaTime;
+		/*scoreBonusCounter += Time.deltaTime;
 		if (scoreBonusCounter > scoreBonusRate) {
 			scoreBonusCounter -= scoreBonusRate;
 			ScoreControl.score += 1;
-		}
+		}*/
 
-		time += Time.deltaTime;
+		time -= Time.deltaTime;
 		countdownTimer.text = ((int) time).ToString();
+
+		if (time <= 0f)
+			Application.LoadLevel("GameOver");
 	}
 
     /*public GUIText countdownTimer; //attach relevant GUIText in inspector
