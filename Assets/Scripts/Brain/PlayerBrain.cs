@@ -26,6 +26,10 @@ public class PlayerBrain : Brain {
 		base.Kill();
 	}
 
+	void OnDestroy() {
+		Screen.lockCursor = false;
+	}
+
 	//Input to controls
 	override public void Update () {
 		base.Update();

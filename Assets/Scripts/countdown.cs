@@ -8,7 +8,29 @@ using System.Collections;
  */
 public class countdown : MonoBehaviour {
 
-    public GUIText countdownTimer; //attach relevant GUIText in inspector
+	//Abe Rewrite:
+	public GUIText countdownTimer;
+	public float time = 0;
+	public float scoreBonusRate = 1f;
+
+	float scoreBonusCounter = 0f;
+
+	void Start() {
+
+	}
+
+	void Update() {
+		scoreBonusCounter += Time.deltaTime;
+		if (scoreBonusCounter > scoreBonusRate) {
+			scoreBonusCounter -= scoreBonusRate;
+			ScoreControl.score += 1;
+		}
+
+		time += Time.deltaTime;
+		countdownTimer.text = ((int) time).ToString();
+	}
+
+    /*public GUIText countdownTimer; //attach relevant GUIText in inspector
     int endTime;
     public int timerSet;
 
@@ -30,5 +52,5 @@ public class countdown : MonoBehaviour {
         if (timeLeft <= 0)
             Application.LoadLevel("GameOver");
 	
-	}
+	}*/
 }

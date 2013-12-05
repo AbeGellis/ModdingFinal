@@ -20,6 +20,8 @@ public class CharacterControl : MonoBehaviour {
 	bool grounded;	//On ground or not
 	bool jump; //About to jump
 	bool rise; //Rising with variable jumping
+
+	public ColorArea.CharColor setColor = ColorArea.CharColor.None;
 	
 	Vector3 horizontalMove = Vector3.zero;	//Current movement impetus
 	
@@ -73,6 +75,8 @@ public class CharacterControl : MonoBehaviour {
 	}
 
 	void Update() {
+		if (setColor != ColorArea.CharColor.None)
+			brain.setColor(setColor);
 		brain.Update();
 	}
 	
@@ -92,7 +96,7 @@ public class CharacterControl : MonoBehaviour {
 		//Grounded check
 		Ray checkGround = new Ray(transform.position, Vector3.down);
 		
-		grounded = (Mathf.Abs(rigidbody.velocity.y) < 2f && Physics.Raycast(checkGround, 1f) );
+		grounded = (Mathf.Abs(rigidbody.velocity.y) < 4f && Physics.Raycast(checkGround, 1.2f) );
 		
 		//Apply jump
 		if (jump) {

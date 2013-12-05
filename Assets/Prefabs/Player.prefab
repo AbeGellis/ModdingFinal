@@ -49,7 +49,6 @@ GameObject:
   - 92: {fileID: 9200000}
   - 124: {fileID: 12400000}
   - 81: {fileID: 8100000}
-  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -317,6 +316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   color: 6
   colorVisible: 1
+  pointsWorth: 0
   forward: 119
   back: 115
   left: 97
@@ -343,22 +343,6 @@ MonoBehaviour:
   stopSpeed: .400000006
   drag: 10
   brain: {fileID: 11400000}
---- !u!114 &11400004
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63156ecfa5e4b7d44b48c58e4bc8f450, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  xcoor: 10
-  ycoor: 10
-  paper: 0
-  ammo: 0
-  food: 0
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
