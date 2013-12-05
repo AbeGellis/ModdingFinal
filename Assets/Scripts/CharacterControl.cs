@@ -77,6 +77,7 @@ public class CharacterControl : MonoBehaviour {
 	void Update() {
 		if (setColor != ColorArea.CharColor.None)
 			brain.setColor(setColor);
+		brain.Update();
 	}
 	
 	void FixedUpdate() {
