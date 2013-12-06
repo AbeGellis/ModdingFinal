@@ -5249,7 +5249,9 @@ MonoBehaviour:
   turnSpeed: 1
   closeDistance: 0
   farDistance: .5
-  sightDistance: 10
+  sightDistance: 30
+  timeBonus: 5
+  scoreBonus: 5
 --- !u!4 &494431716
 Transform:
   m_ObjectHideFlags: 0
@@ -6048,8 +6050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 1684668028}
-  time: 0
-  scoreBonusRate: 5
+  startTime: 120
 --- !u!1001 &592837479
 Prefab:
   m_ObjectHideFlags: 0
@@ -7604,6 +7605,7 @@ GameObject:
   - 92: {fileID: 853095541}
   - 124: {fileID: 853095540}
   - 81: {fileID: 853095539}
+  - 114: {fileID: 853095538}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -7611,6 +7613,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &853095538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 853095537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7194972b751aca47939c6e894b73b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAmplitude: 0
+  shakeSlowTime: 1
 --- !u!81 &853095539
 AudioListener:
   m_ObjectHideFlags: 0
@@ -11607,7 +11622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88879db7a3d9d8f4db1230cee3e514f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: 6
+  color: 3
   colorVisible: 1
   pointsWorth: 0
   forward: 119
@@ -14776,6 +14791,7 @@ MonoBehaviour:
   jumpBoost: .550000012
   stopSpeed: .400000006
   drag: 10
+  setColor: 3
   brain: {fileID: 494431715}
 --- !u!54 &1474235767
 Rigidbody:
@@ -15845,6 +15861,7 @@ MonoBehaviour:
   jumpBoost: .550000012
   stopSpeed: .400000006
   drag: 10
+  setColor: 3
   brain: {fileID: 1223962979}
 --- !u!54 &1612865467
 Rigidbody:
@@ -16528,7 +16545,7 @@ GUIText:
   m_GameObject: {fileID: 1684668027}
   m_Enabled: 1
   serializedVersion: 3
-  m_Text: 100
+  m_Text: time
   m_Anchor: 4
   m_Alignment: 0
   m_PixelOffset: {x: 0, y: 0}
