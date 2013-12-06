@@ -13,7 +13,10 @@ public class countdown : MonoBehaviour {
 	public float startTime;
 	public static float time = 0;
 
-	float scoreBonusCounter = 0f;
+	public static bool gameOver;
+	public float endTimer = 2f;
+
+	//float scoreBonusCounter = 0f;
 
 	void Start() {
 		time = startTime;
@@ -26,10 +29,14 @@ public class countdown : MonoBehaviour {
 			ScoreControl.score += 1;
 		}*/
 
-		time -= Time.deltaTime;
+		if (!gameOver)
+			time -= Time.deltaTime;
+		else
+			endTimer -= Time.deltaTime;
+
 		countdownTimer.text = ((int) time).ToString();
 
-		if (time <= 0f)
+		if (time <= 0f || endTimer <= 0f)
 			Application.LoadLevel("GameOver");
 	}
 

@@ -22,7 +22,15 @@ public class PlayerBrain : Brain {
 	}
 
 	override public void Kill() {
-		Camera.main.transform.parent = null;
+		for (int i = 0; i < body.transform.childCount; ++i) {
+			if (body.transform.GetChild(i).gameObject.name == "Main Camera" || 
+			    body.transform.GetChild(i).gameObject.name == "Spotlight Glow") {
+				body.transform.GetChild(i).parent = null;
+			}
+		}
+
+		countdown.gameOver = true;
+
 		base.Kill();
 	}
 

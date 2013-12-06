@@ -29,7 +29,6 @@ GameObject:
   - 54: {fileID: 5400000}
   - 114: {fileID: 11400002}
   - 136: {fileID: 13600000}
-  - 136: {fileID: 13600002}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -49,6 +48,7 @@ GameObject:
   - 92: {fileID: 9200000}
   - 124: {fileID: 12400000}
   - 81: {fileID: 8100000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -82,7 +82,7 @@ GameObject:
   - 4: {fileID: 400008}
   - 108: {fileID: 10800002}
   m_Layer: 0
-  m_Name: Spotlight
+  m_Name: Spotlight Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -335,6 +335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d6da167792b844aa004090a84c3eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathParticles: {fileID: 100000, guid: e3ff3b57ab410e241bf6e7e5782334d3, type: 2}
   groundSpeed: 8
   airSpeed: 1
   maxSpeed: 8
@@ -344,6 +345,20 @@ MonoBehaviour:
   drag: 10
   setColor: 3
   brain: {fileID: 11400000}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7194972b751aca47939c6e894b73b56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeAmplitude: .0500000007
+  shakeSlowTime: .300000012
+  shakeSpeed: 80
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -352,19 +367,6 @@ Behaviour:
   m_GameObject: {fileID: 100004}
   m_Enabled: 1
 --- !u!136 &13600000
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: .5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &13600002
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

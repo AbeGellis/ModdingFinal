@@ -8,6 +8,8 @@ public class CharacterControl : MonoBehaviour {
 	public static CharacterControl player;					//The player entity (whatever has a playerbrain)
 	public static List<CharacterControl> characters;		//Character container (tracks all characters)
 	
+	public GameObject deathParticles;
+
 	public float groundSpeed;	//Acceleration on the ground
 	public float airSpeed;		//Acceleration in the air
 	public float maxSpeed;		//Maximum velocity
@@ -38,6 +40,14 @@ public class CharacterControl : MonoBehaviour {
 		characters = new List<CharacterControl>();
 		characters.Add(this);
 		brain.Assign(this);
+	}
+
+	public void Kill() {
+		if (deathParticles != null) {
+			ParticleSystem p = 
+				(Instantiate(deathParticles, transform.position, Quaternion.identity) as GameObject).particleSystem;
+			p.startColor = ColorArea.GetPallete(brain.color);
+		}
 	}
 
 	public void TouchColorArea(ColorArea.CharColor touch) {

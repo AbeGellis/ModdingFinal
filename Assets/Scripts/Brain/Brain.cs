@@ -37,6 +37,7 @@ public class Brain : MonoBehaviour {
 
 	virtual public void Kill() {
 		ScoreControl.score += pointsWorth;
+		body.Kill();
 		Destroy(this.body.gameObject);
 	}
 
