@@ -84,8 +84,6 @@ public class CharacterControl : MonoBehaviour {
 			brain.Land(rigidbody.velocity.y - prevFallSpeed);
 
 		prevFallSpeed = rigidbody.velocity.y;
-
-		brain.Update();
 	}
 	
 	void FixedUpdate() {
