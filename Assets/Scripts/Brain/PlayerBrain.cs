@@ -30,6 +30,10 @@ public class PlayerBrain : Brain {
 		Screen.lockCursor = false;
 	}
 
+	override public void Land(float velocity) {
+		ScreenShake.shakeTimer += .1f + (Mathf.Max(.5f, (velocity - 20f)/80f));
+	}
+
 	//Input to controls
 	override public void Update () {
 		base.Update();

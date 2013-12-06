@@ -39,7 +39,10 @@ public class Brain : MonoBehaviour {
 		ScoreControl.score += pointsWorth;
 		Destroy(this.body.gameObject);
 	}
-	
+
+	virtual public void Land(float velocity) {
+	}
+
 	//Turns both the sight and the body
 	protected void Turn(Vector3 changeAngles) {
 		transform.Rotate(Vector3.right, changeAngles.y);	//Vertical rotation of the sightline

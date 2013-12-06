@@ -21,6 +21,8 @@ public class CharacterControl : MonoBehaviour {
 	bool jump; //About to jump
 	bool rise; //Rising with variable jumping
 
+	float prevFallSpeed = 0f;
+
 	public ColorArea.CharColor setColor = ColorArea.CharColor.None;
 	
 	Vector3 horizontalMove = Vector3.zero;	//Current movement impetus
@@ -77,6 +79,12 @@ public class CharacterControl : MonoBehaviour {
 	void Update() {
 		if (setColor != ColorArea.CharColor.None)
 			brain.setColor(setColor);
+
+		if (rigidbody.velocity.y - prevFallSpeed > 20f && prevFallSpeed < 0f)
+			brain.Land(rigidbody.velocity.y - prevFallSpeed);
+
+		prevFallSpeed = rigidbody.velocity.y;
+
 		brain.Update();
 	}
 	
