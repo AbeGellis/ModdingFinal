@@ -61,8 +61,11 @@ public class CharacterControl : MonoBehaviour {
 	
 	//Applies upward force
 	public void Jump() {
-		if (grounded) 
+		if (grounded) {
 			jump = true;
+			if (brain is PlayerBrain)
+				brain.audio.Play();
+		}
 	}
 	
 	public bool IsRising() {

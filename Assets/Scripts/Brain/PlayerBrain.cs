@@ -13,7 +13,7 @@ public class PlayerBrain : Brain {
 
 	public float camAngleUpperBound = 60f;	//Highest angle the camera can rise
 	public float camAngleLowerBound = 30f;	//Lowest angle the camera can dip
-	
+
 	Camera cam;
 
     public GameObject lifeObject; //for GUI use
@@ -63,7 +63,7 @@ public class PlayerBrain : Brain {
 		if (Input.GetKey(right))
 			body.Move(body.transform.right);
 		
-		if (Input.GetKeyDown(KeyCode.Space)) 
+		if (Input.GetKeyDown(KeyCode.Space))
 			body.Jump();
 		
 		if (body.IsRising() && !Input.GetKey(KeyCode.Space)) 
