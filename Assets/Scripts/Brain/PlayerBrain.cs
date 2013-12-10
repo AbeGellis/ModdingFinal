@@ -15,7 +15,10 @@ public class PlayerBrain : Brain {
 	public float camAngleLowerBound = 30f;	//Lowest angle the camera can dip
 	
 	Camera cam;
-	
+
+    public GameObject lifeObject; //for GUI use
+    float startPosition; //for respawn use
+
 	override public void Assign(CharacterControl body) {
 		base.Assign(body);
 		CharacterControl.player = body;
@@ -95,9 +98,16 @@ public class PlayerBrain : Brain {
 	}
 	
 	override public void TouchCharacter(CharacterControl other) {
-		if (other.brain.color == color)
-			other.brain.Kill();
-		else
-			Kill();
+        if (other.brain.color == color)
+            other.brain.Kill();
+        else
+        {
+            Kill();
+            /*
+            //delete a heart for every death.
+            lifeControl.lives--;
+            lifeObject.GetComponent<lifeControl>().removeHeart();
+             */
+        }
 	}
 }
