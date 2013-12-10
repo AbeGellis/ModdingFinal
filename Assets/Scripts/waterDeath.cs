@@ -26,18 +26,22 @@ public class waterDeath : MonoBehaviour {
       //  count++;
 
 		//"respawn" player when they hit the water
-		if (swimmer.gameObject == CharacterControl.player.gameObject)
-       // {
+        if (swimmer.gameObject == CharacterControl.player.gameObject)
+        {
             //delete a heart for every death.
             //    lifeControl.lives --;
-           //     lifeObject.GetComponent<lifeControl>().removeHeart();
+            //     lifeObject.GetComponent<lifeControl>().removeHeart();
 
             //respawn player
-		//	swimmer.gameObject.transform.position = startPosition;
-       //     swimmer.rigidbody.velocity = Vector3.zero;
-       // }
-	  //else
-		Destroy(swimmer.gameObject);
-        Application.LoadLevel("GameOver");
+            //	swimmer.gameObject.transform.position = startPosition;
+            //     swimmer.rigidbody.velocity = Vector3.zero;
+
+            //else
+            Destroy(swimmer.gameObject);
+            Application.LoadLevel("GameOver");
+        }
+
+        else
+            Destroy(swimmer.gameObject);
 	}
 }

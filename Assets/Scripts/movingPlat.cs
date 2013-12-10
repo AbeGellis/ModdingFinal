@@ -17,25 +17,27 @@ public class movingPlat : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
+        //set start, end positions
         start = transform.position;
         end = ender.transform.position;
         Destroy(ender);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	    
-        if(transform.position == start)
-            switchCount = true;
-        else if(transform.position == end)
-            switchCount = false;
+    void Update()
+    {
 
-        //if the object is in the end position, go to start and vice versa
+            if (transform.position == start)
+                switchCount = true;
+            else if (transform.position == end)
+                switchCount = false;
 
-        if (switchCount)
-            transform.position = Vector3.MoveTowards(transform.position, end, speed);
+            //if the object is in the end position, go to start and vice versa
 
-        else
-            transform.position = Vector3.MoveTowards(transform.position, start, speed);
+            if (switchCount)
+                transform.position = Vector3.MoveTowards(transform.position, end, speed * Time.deltaTime);
+
+            else
+                transform.position = Vector3.MoveTowards(transform.position, start, speed * Time.deltaTime);
     }
 }
