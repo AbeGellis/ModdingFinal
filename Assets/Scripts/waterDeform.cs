@@ -6,8 +6,8 @@ public class waterDeform : MonoBehaviour {
 	MeshFilter mf;
     Vector3[] baseVertices;
 	Vector3[] workingCopy;
-	float waveHeight = 0.005f;
-	float waveSize = 3f;
+	float waveHeight = 0.01f;
+	float waveSpeed = 3f;
 	
 	// Use this for initialization
 	void Start () {
@@ -23,7 +23,7 @@ public class waterDeform : MonoBehaviour {
 		for(int i = 0; i < workingCopy.Length; i++)
 		{
 			//every vertex in the model will now be moved according to the sine wave
-			workingCopy[i] = baseVertices[i] + Vector3.up * Mathf.Sin ((Time.time + i)* waveSize) * waveHeight;
+			workingCopy[i] = baseVertices[i] + Vector3.up * Mathf.Sin ((Time.time + i)* waveSpeed) * waveHeight;
 		}
 		
 		//put data back into mesh filter
@@ -33,9 +33,9 @@ public class waterDeform : MonoBehaviour {
 		mf.mesh.RecalculateNormals();
 		
 		//visualize normals
-		for (int i = 0; i < mf.mesh.vertices.Length; i++) 
-		{
-			Debug.DrawRay(mf.mesh.vertices[i], mf.mesh.normals[i]);
-		}
+		//for (int i = 0; i < mf.mesh.vertices.Length; i++) 
+		//{
+		//	Debug.DrawRay(mf.mesh.vertices[i], mf.mesh.normals[i]);
+		//}
 	}
 }
