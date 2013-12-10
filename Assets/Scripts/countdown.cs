@@ -20,6 +20,7 @@ public class countdown : MonoBehaviour {
 
 	void Start() {
 		time = startTime;
+		gameOver = false;
 	}
 
 	void Update() {

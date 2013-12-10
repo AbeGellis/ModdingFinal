@@ -12445,7 +12445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 1139033198}
-  startTime: 0
+  startTime: 120
   endTimer: 2
 --- !u!114 &1941184289
 MonoBehaviour:
