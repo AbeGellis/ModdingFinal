@@ -14746,9 +14746,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathParticles: {fileID: 100000, guid: e3ff3b57ab410e241bf6e7e5782334d3, type: 2}
-  groundSpeed: 10
+  groundSpeed: 8
   airSpeed: 1
-  maxSpeed: 10
+  maxSpeed: 8
   jumpForce: 12
   jumpBoost: .550000012
   stopSpeed: .400000006
@@ -15615,7 +15615,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: c15a782c32e6746db8d8e0602cb96254, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: .100000001
   m_Pitch: 1
   Loop: 1
   Mute: 0
