@@ -26,7 +26,7 @@ public class waterDeath : MonoBehaviour {
       //  count++;
 
 		//"respawn" player when they hit the water
-        if (swimmer.gameObject == CharacterControl.player.gameObject)
+        /*if (swimmer.gameObject == CharacterControl.player.gameObject)
         {
             //delete a heart for every death.
             //    lifeControl.lives --;
@@ -40,7 +40,10 @@ public class waterDeath : MonoBehaviour {
             Destroy(swimmer.gameObject);
             
             Application.LoadLevel("GameOver");
-        }
+        }*/
+		if (swimmer.gameObject.GetComponent<CharacterControl>() != null) {
+			swimmer.gameObject.GetComponentsInChildren<Brain>()[0].Kill();
+		}
 
         else
             Destroy(swimmer.gameObject);
