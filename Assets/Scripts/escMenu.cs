@@ -14,7 +14,9 @@ public class escMenu : MonoBehaviour {
 	    
         if(Input.GetKey(KeyCode.Q))
         {
+            ScoreControl.score = 0;
             Application.LoadLevel("instructions");
+
         }
 	}
 }
