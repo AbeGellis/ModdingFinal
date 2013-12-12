@@ -38,6 +38,7 @@ public class waterDeath : MonoBehaviour {
 
             //else
             Destroy(swimmer.gameObject);
+            
             Application.LoadLevel("GameOver");
         }
 
