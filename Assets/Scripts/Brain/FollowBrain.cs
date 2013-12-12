@@ -8,6 +8,8 @@ public class FollowBrain : Brain {
 	
 	public float closeDistance; //Distance from the player where the character stops following
 	public float farDistance;	//Distance from the player where the character starts following
+
+	public float timeBonus, scoreBonus;
 	
 	bool following = true;	//Whether or not the character is following
 	

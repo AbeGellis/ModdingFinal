@@ -39,7 +39,7 @@ public class lifeControl : MonoBehaviour
             heart3.enabled = false;
     }
 
-    //when player presses P, call this function by using lifeControl.restart()
+    //when player presses Q, call this function by using lifeControl.restart()
     public void restart()
     {
         heart1.enabled = true;

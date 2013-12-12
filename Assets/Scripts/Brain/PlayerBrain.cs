@@ -13,21 +13,36 @@ public class PlayerBrain : Brain {
 
 	public float camAngleUpperBound = 60f;	//Highest angle the camera can rise
 	public float camAngleLowerBound = 30f;	//Lowest angle the camera can dip
-	
+
 	Camera cam;
-	
+
+    public GameObject lifeObject; //for GUI use
+    float startPosition; //for respawn use
+
 	override public void Assign(CharacterControl body) {
 		base.Assign(body);
 		CharacterControl.player = body;
 	}
 
 	override public void Kill() {
-		Camera.main.transform.parent = null;
+		for (int i = 0; i < body.transform.childCount; ++i) {
+			if (body.transform.GetChild(i).gameObject.name == "Main Camera" || 
+			    body.transform.GetChild(i).gameObject.name == "Spotlight Glow") {
+				body.transform.GetChild(i).parent = null;
+			}
+		}
+
+		countdown.gameOver = true;
+
 		base.Kill();
 	}
 
 	void OnDestroy() {
 		Screen.lockCursor = false;
+	}
+
+	override public void Land(float velocity) {
+		ScreenShake.shakeTimer += .1f + (Mathf.Max(.5f, (velocity - 20f)/80f));
 	}
 
 	//Input to controls
@@ -48,7 +63,7 @@ public class PlayerBrain : Brain {
 		if (Input.GetKey(right))
 			body.Move(body.transform.right);
 		
-		if (Input.GetKeyDown(KeyCode.Space)) 
+		if (Input.GetKeyDown(KeyCode.Space))
 			body.Jump();
 		
 		if (body.IsRising() && !Input.GetKey(KeyCode.Space)) 
@@ -83,9 +98,16 @@ public class PlayerBrain : Brain {
 	}
 	
 	override public void TouchCharacter(CharacterControl other) {
-		if (other.brain.color == color)
-			other.brain.Kill();
-		else
-			Kill();
+        if (other.brain.color == color)
+            other.brain.Kill();
+        else
+        {
+            Kill();
+            /*
+            //delete a heart for every death.
+            lifeControl.lives--;
+            lifeObject.GetComponent<lifeControl>().removeHeart();
+             */
+        }
 	}
 }

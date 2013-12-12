@@ -116,10 +116,12 @@ MonoBehaviour:
   color: 0
   colorVisible: 1
   pointsWorth: 10
-  turnSpeed: 1
+  turnSpeed: 2
   closeDistance: 0
   farDistance: .5
-  sightDistance: 10
+  sightDistance: 30
+  timeBonus: 5
+  scoreBonus: 5
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,13 +133,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49d6da167792b844aa004090a84c3eee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundSpeed: 5
+  deathParticles: {fileID: 100000, guid: e3ff3b57ab410e241bf6e7e5782334d3, type: 2}
+  groundSpeed: 8
   airSpeed: 1
-  maxSpeed: 5
+  maxSpeed: 8
   jumpForce: 12
   jumpBoost: .550000012
   stopSpeed: .400000006
   drag: 10
+  setColor: 3
   brain: {fileID: 11400000}
 --- !u!136 &13600000
 CapsuleCollider:

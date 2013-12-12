@@ -8,6 +8,8 @@ public class CharacterControl : MonoBehaviour {
 	public static CharacterControl player;					//The player entity (whatever has a playerbrain)
 	public static List<CharacterControl> characters;		//Character container (tracks all characters)
 	
+	public GameObject deathParticles;
+
 	public float groundSpeed;	//Acceleration on the ground
 	public float airSpeed;		//Acceleration in the air
 	public float maxSpeed;		//Maximum velocity
@@ -20,6 +22,8 @@ public class CharacterControl : MonoBehaviour {
 	bool grounded;	//On ground or not
 	bool jump; //About to jump
 	bool rise; //Rising with variable jumping
+
+	float prevFallSpeed = 0f;
 
 	public ColorArea.CharColor setColor = ColorArea.CharColor.None;
 	
@@ -38,6 +42,14 @@ public class CharacterControl : MonoBehaviour {
 		brain.Assign(this);
 	}
 
+	public void Kill() {
+		if (deathParticles != null) {
+			ParticleSystem p = 
+				(Instantiate(deathParticles, transform.position, Quaternion.identity) as GameObject).particleSystem;
+			p.startColor = ColorArea.GetPallete(brain.color);
+		}
+	}
+
 	public void TouchColorArea(ColorArea.CharColor touch) {
 		brain.TouchColorArea(touch);
 	}
@@ -49,8 +61,11 @@ public class CharacterControl : MonoBehaviour {
 	
 	//Applies upward force
 	public void Jump() {
-		if (grounded) 
+		if (grounded) {
 			jump = true;
+			if (brain is PlayerBrain)
+				brain.audio.Play();
+		}
 	}
 	
 	public bool IsRising() {
@@ -77,7 +92,11 @@ public class CharacterControl : MonoBehaviour {
 	void Update() {
 		if (setColor != ColorArea.CharColor.None)
 			brain.setColor(setColor);
-		brain.Update();
+
+		if (rigidbody.velocity.y - prevFallSpeed > 20f && prevFallSpeed < 0f)
+			brain.Land(rigidbody.velocity.y - prevFallSpeed);
+
+		prevFallSpeed = rigidbody.velocity.y;
 	}
 	
 	void FixedUpdate() {

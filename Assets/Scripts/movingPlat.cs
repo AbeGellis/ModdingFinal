@@ -1,86 +1,68 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-/*
- * Brian Kang
- * 11-19-13
- * Script for moving a platform "diagonally" across the arena.
- * */
+//move platform across the arena.
 
 public class movingPlat : MonoBehaviour {
-	int count;
-	Ray ray;
-	Vector3 direction;
-	public float speed = 5f;
+
+    //temp game object describing end position
+    public GameObject ender;
+
+	List<GameObject> riders;
+
+    Vector3 start;
+    Vector3 end;
+
+    public bool switchCount; //switch from start to end. apparently there is already a var called "switch" so this is the new name
+    public float speed = 5f; //speed of object
+    
 	
 	// Use this for initialization
 	void Start () {
-        count = 0;
-		direction = transform.forward;
-		//initial force
-		//rigidbody.AddForce (direction * speed, ForceMode.VelocityChange);
+        //set start, end positions
+		riders = new List<GameObject>();
+        start = transform.position;
+        end = ender.transform.position;
+        Destroy(ender);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	    
-        //ray pointing forward to test if there are objects ahead: MAKE SURE BOTS/PLAYERS ARE ON IGNORE RAYCAST LAYER
-		ray = new Ray(transform.position, direction);
-		RaycastHit rayHit = new RaycastHit();
+    void Update()
+    {
 
-        if (Physics.Raycast(ray, out rayHit, 20f))
-        {
-            if (count % 2 == 0)
-            {
-                //when the count is an even number, plat moves "forward"
-               // rigidbody.velocity = Vector3.zero;
-                transform.position += transform.forward * speed * Time.deltaTime;
+	    if (transform.position == start)
+	        switchCount = true;
+	    else if (transform.position == end)
+	        switchCount = false;
 
-                count++;
-            }
+	    //if the object is in the end position, go to start and vice versa
 
-            else
-            {
-                //when the count is odd, plat moves "backward"
-                //rigidbody.velocity = Vector3.zero;
-                transform.position += -transform.forward * Time.deltaTime;
 
-                count++;
-            }
-        }
+		Vector3 positionChange = transform.position;
+
+	    if (switchCount)
+	        transform.position = Vector3.MoveTowards(transform.position, end, speed * Time.deltaTime);
+
+	    else
+	        transform.position = Vector3.MoveTowards(transform.position, start, speed * Time.deltaTime);
+
+		positionChange = transform.position - positionChange;
+
+		foreach (GameObject g in riders) {
+			g.transform.position += positionChange;
+		}
+    }
+
+	void OnCollisionEnter(Collision collisionInfo) {
+		if (collisionInfo.gameObject.GetComponent<CharacterControl>() != null) {
+			riders.Add(collisionInfo.gameObject);
+		}
 	}
-	
-	void FixedUpdate(){
-		
-		/*//ray pointing forward to test if there are objects ahead: MAKE SURE BOTS/PLAYERS ARE ON IGNORE RAYCAST LAYER
-		ray = new Ray(transform.position, direction);
-		RaycastHit rayHit = new RaycastHit();
-		
-		if (Physics.Raycast (ray, out rayHit, 20f))
-		{
-			//when the count is an even number, plat moves "forward"
-			if (count % 2 == 0)
-			{
-				//plat stops and changes direction
-				rigidbody.velocity = Vector3.zero;
-				direction = transform.forward;
-				
-				//add force to plat, update count
-				rigidbody.AddForce (direction * speed, ForceMode.VelocityChange); 
-				count ++;
-			}
-			
-			//when the count is an odd number, plat moves "backward"
-			else
-			{
-				//plat stops and changes direction
-				rigidbody.velocity = Vector3.zero;
-				direction = -transform.forward;
-				
-				//add force to plat, update count
-				rigidbody.AddForce (direction * speed, ForceMode.VelocityChange); 
-				count++;
-			}
-		}*/
+
+	void OnCollisionExit(Collision collisionInfo) {
+		if (riders.Contains(collisionInfo.gameObject)) {
+			riders.Remove(collisionInfo.gameObject);
+		}
 	}
 }
