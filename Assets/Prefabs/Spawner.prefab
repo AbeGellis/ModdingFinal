@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnCounter: 5
-  spawnCycle: 45
+  spawnCycle: 30
   spawnSpread: 5
   spawnObject: {fileID: 100002, guid: 2cfda9ddc465cdf4991039f201781ef9, type: 2}
   spawnColor: 3
