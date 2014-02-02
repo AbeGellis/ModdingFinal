@@ -4,8 +4,8 @@
 TagManager:
   tags:
   - instructions
-  - 
-  - 
+  - Arena
+  - TestLevel
   - 
   - 
   Builtin Layer 0: Default
@@ -40,3 +40,8 @@ TagManager:
   User Layer 29: 
   User Layer 30: 
   User Layer 31: 
+  m_SortingLayers:
+  - name: Default
+    userID: 0
+    uniqueID: 0
+    locked: 0

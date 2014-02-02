@@ -6,7 +6,7 @@ public class waterDeform : MonoBehaviour {
 	MeshFilter mf;
     Vector3[] baseVertices;
 	Vector3[] workingCopy;
-	float waveHeight = 0.01f;
+	float waveHeight = 0.008f;
 	float waveSpeed = 3f;
 	
 	// Use this for initialization

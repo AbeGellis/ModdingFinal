@@ -120,7 +120,7 @@ MonoBehaviour:
   closeDistance: 0
   farDistance: .5
   sightDistance: 30
-  timeBonus: 5
+  timeBonus: 15
   scoreBonus: 5
 --- !u!114 &11400002
 MonoBehaviour:
