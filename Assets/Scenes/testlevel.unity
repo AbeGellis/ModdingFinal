@@ -5326,7 +5326,7 @@ MonoBehaviour:
   closeDistance: 0
   farDistance: .5
   sightDistance: 30
-  timeBonus: 5
+  timeBonus: 15
   scoreBonus: 5
 --- !u!4 &485944192
 Transform:
@@ -5414,7 +5414,7 @@ MonoBehaviour:
   closeDistance: 0
   farDistance: .5
   sightDistance: 30
-  timeBonus: 5
+  timeBonus: 15
   scoreBonus: 5
 --- !u!4 &494431716
 Transform:
@@ -6211,7 +6211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdownTimer: {fileID: 1684668028}
-  startTime: 60
+  startTime: 90
   endTimer: 2
 --- !u!1001 &592837479
 Prefab:
@@ -18432,7 +18432,7 @@ MonoBehaviour:
   closeDistance: 0
   farDistance: .5
   sightDistance: 30
-  timeBonus: 5
+  timeBonus: 15
   scoreBonus: 5
 --- !u!4 &1863044689
 Transform:

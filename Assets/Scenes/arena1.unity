@@ -8643,7 +8643,7 @@ AudioSource:
   m_GameObject: {fileID: 819105278}
   m_Enabled: 1
   serializedVersion: 3
-  m_audioClip: {fileID: 8300000, guid: 300c7a38073105d4fa161311e01ee9f3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0af58a4803e9cee45b9b395f3b25adcd, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -9050,7 +9050,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0b1e6a16521515c48b1a6c3c58308bbe, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .640588284
+      value: .732324123
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0b1e6a16521515c48b1a6c3c58308bbe, type: 2}
       propertyPath: m_LocalPosition.z
@@ -14264,6 +14264,7 @@ GameObject:
   - 23: {fileID: 1583291282}
   - 114: {fileID: 1583291286}
   - 114: {fileID: 1583291287}
+  - 114: {fileID: 1583291288}
   m_Layer: 0
   m_Name: water
   m_TagString: Untagged
@@ -14322,7 +14323,7 @@ Transform:
   m_PrefabInternal: {fileID: 874494977}
   m_GameObject: {fileID: 1583291281}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 858.792175, y: .640588284, z: 550.040955}
+  m_LocalPosition: {x: 858.792175, y: .732324123, z: 550.040955}
   m_LocalScale: {x: 13.412015, y: 1, z: 20.7322044}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14349,6 +14350,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edc1d2c90776c0e4ead01b5a53b24478, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1583291288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1583291281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6f2441cb42b7948b5467ab4984ed50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: .0500000007
 --- !u!1 &1600767977
 GameObject:
   m_ObjectHideFlags: 0
@@ -16312,7 +16325,7 @@ MonoBehaviour:
   closeDistance: 0
   farDistance: .5
   sightDistance: 30
-  timeBonus: 5
+  timeBonus: 15
   scoreBonus: 5
 --- !u!4 &1833338683
 Transform:
@@ -19107,7 +19120,7 @@ Light:
   serializedVersion: 3
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: .00999999978
+  m_Intensity: .100000001
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10

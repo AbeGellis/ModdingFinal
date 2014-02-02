@@ -12,7 +12,13 @@ public class FollowBrain : Brain {
 	public float timeBonus, scoreBonus;
 	
 	bool following = true;	//Whether or not the character is following
-	
+
+    public override void Kill()
+    {
+        countdown.time += timeBonus;
+        base.Kill();
+    }
+
 	override public void Update () {
 		base.Update();
 

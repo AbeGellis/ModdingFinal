@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 /*
- * Brian Kang
  * 11-19-13
  * Script meant to respawn (LATER = kill) player when they touch the water. 
  * */

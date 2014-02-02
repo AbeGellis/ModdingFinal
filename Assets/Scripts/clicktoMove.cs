@@ -14,7 +14,7 @@ public class clicktoMove : MonoBehaviour {
 	//initialize destination and direction vectors ahead of time
 	Vector3 destination = new Vector3(388f, 3f, 140f); 
 	Vector3 direction;
-    float speed = 40f;
+    float speed = 100f;
 	//public bool mouseClicked = false;
 	
 	// Use this for initialization

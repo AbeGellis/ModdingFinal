@@ -5,28 +5,24 @@ using System.Collections;
  * 11-26-13 update
  * added invisible walls to the level so that a misclick no longer applies. all misclick counts, etc have been commented out
  */
+
+/* 12-25-13 update
+ * now a control class for the triggers in overworld. level select purposes; in OnTriggerEnter call levelLoaded and change int using endtrigger.level
+ */
 public class endtrigger : MonoBehaviour {
 	
-	public GameObject character;
-	//public clicktoMove mouseClicked;
-	
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-	
-	void OnTriggerEnter()
-	{
-		character.rigidbody.velocity = Vector3.zero; 
-		//change the mouseClicked bool in clicktoMove to false so that when overworld level loads again, movement can resume.
-		//mouseClicked.mouseClicked = false;
-		
-		//load arena level
-		Application.LoadLevel ("arena1");
-	}
+    public static int level = 0;
+    public GameObject character;
+
+    //loads level according to value of level. again, change it using endtrigger.level
+    public static void levelLoaded()
+    {
+        //if (level == 0)
+        //    Application.LoadLevel("tutorial");
+        if (level == 1)
+            Application.LoadLevel("testlevel");
+
+        if (level == 2)
+            Application.LoadLevel("arena1");
+    }
 }
